@@ -369,3 +369,5 @@ select set_integer_now_func('test_table_int', 'my_user_schema.dummy_now4', repla
 \c :TEST_DBNAME :ROLE_SUPERUSER
 ALTER SCHEMA my_user_schema RENAME TO my_new_schema;
 select * from _timescaledb_catalog.dimension WHERE hypertable_id = :TEST_TABLE_INT_HYPERTABLE_ID;
+
+select * from test_table_int order by time;
