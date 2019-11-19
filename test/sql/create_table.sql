@@ -13,3 +13,5 @@ SELECT create_hypertable('test_hyper_pk', 'time');
 -- Foreign key constraints that reference hypertables are currently unsupported
 CREATE TABLE test_fk(time TIMESTAMPTZ REFERENCES test_hyper_pk(time));
 \set ON_ERROR_STOP 1
+
+select * from test_hyper_pk;
