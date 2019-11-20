@@ -21,7 +21,8 @@ SELECT create_hypertable('hypertable_schema.test2', 'time', 'location', 2, assoc
 INSERT INTO hypertable_schema.test1 VALUES ('2001-01-01 01:01:01', 23.3, 1);
 INSERT INTO hypertable_schema.test2 VALUES ('2001-01-01 01:01:01', 23.3, 1);
 
-SELECT * FROM _timescaledb_catalog.hypertable ORDER BY id;
+SELECT * 
+    FROM _timescaledb_catalog.hypertable ORDER BY id;
 SELECT * FROM _timescaledb_catalog.chunk;
 
 RESET ROLE;
