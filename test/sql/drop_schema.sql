@@ -23,7 +23,8 @@ INSERT INTO hypertable_schema.test2 VALUES ('2001-01-01 01:01:01', 23.3, 1);
 
 SELECT * 
     FROM _timescaledb_catalog.hypertable ORDER BY id;
-SELECT * FROM _timescaledb_catalog.chunk;
+SELECT * 
+    FROM _timescaledb_catalog.chunk;
 
 RESET ROLE;
 --drop the associated schema. We drop the extra schema to show we can
