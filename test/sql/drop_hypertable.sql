@@ -27,7 +27,8 @@ SELECT create_hypertable('chunk_with_dependencies', 'time');
 
 INSERT INTO chunk_with_dependencies VALUES (now(), 1.0);
 
-CREATE VIEW dependent_view_chunk AS SELECT * FROM _timescaledb_internal._hyper_3_2_chunk;
+CREATE VIEW dependent_view_chunk AS 
+    SELECT * FROM _timescaledb_internal._hyper_3_2_chunk;
 
 \set ON_ERROR_STOP 0
 DROP TABLE chunk_with_dependencies;
