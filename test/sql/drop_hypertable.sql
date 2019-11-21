@@ -11,7 +11,8 @@ SELECT create_hypertable('should_drop', 'time');
 CREATE TABLE hyper_with_dependencies (time timestamp, temp float8);
 SELECT create_hypertable('hyper_with_dependencies', 'time');
 
-CREATE VIEW dependent_view AS SELECT * FROM hyper_with_dependencies;
+CREATE VIEW dependent_view AS 
+    SELECT * FROM hyper_with_dependencies;
 
 INSERT INTO hyper_with_dependencies VALUES (now(), 1.0);
 
